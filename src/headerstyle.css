@@ -1,0 +1,27 @@
+.header {
+  border-bottom: 2px solid rgb(26, 118, 192);
+  height: 50px;
+}
+.usertools {
+  border-bottom: 2px solid rgb(26, 118, 192);
+  height: 50px;
+}
+.accueil {
+  position: relative;
+  left: 70%;
+}
+a {
+  margin-left: 50px;
+  text-decoration: none;
+  color: rgb(15, 136, 206);
+}
+.search {
+  position: absolute;
+  left: 30%;
+  width: max-content;
+  top: 2%;
+}
+input {
+  width: 400px;
+  height: 30px;
+}

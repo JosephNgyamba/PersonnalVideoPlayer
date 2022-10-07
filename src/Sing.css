@@ -1,0 +1,29 @@
+.content {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  height: 500px;
+}
+.content-element {
+  background: linear-gradient(#64ace6, #e753ce);
+  width: 50%;
+  height: 500px;
+  text-align: center;
+  vertical-align: bottom;
+  border-radius: 100px 0px 100px 0px;
+}
+h1 {
+  color: white;
+  margin-top: 25%;
+}
+button {
+  width: 200px;
+  height: 60px;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  border: none;
+}

@@ -13,9 +13,12 @@
   "license": "ISC",
   "dependencies": {
     "@react-oauth/google": "^0.2.8",
+    "gapi-script": "^1.2.0",
+    "react-google-login": "^5.2.2",
     "react-router": "^6.4.2",
     "react-router-dom": "^6.4.2",
-    "router": "^1.3.7"
+    "router": "^1.3.7",
+    "typeface-quicksand": "^1.1.13"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

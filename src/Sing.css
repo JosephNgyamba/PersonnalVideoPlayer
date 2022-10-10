@@ -19,11 +19,14 @@ h1 {
   color: white;
   margin-top: 25%;
 }
-button {
+#btn_connexion {
   width: 200px;
   height: 60px;
   color: rgb(0, 0, 0);
   background-color: white;
   border-radius: 20px 20px 20px 20px;
   border: none;
+}
+button {
+  margin-left: 10px;
 }

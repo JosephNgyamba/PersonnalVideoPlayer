@@ -1,4 +1,3 @@
-import GoogleLogin, { GoogleLogout } from "react-google-login";
 import React from "react";
 import "./headerstyle.css";
 import "typeface-quicksand";

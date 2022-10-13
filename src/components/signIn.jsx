@@ -1,7 +1,6 @@
 import { gapi, loadAuth2 } from "gapi-script";
 import React from "react";
 import { useEffect } from "react";
-import GoogleLogin, { GoogleLogout } from "react-google-login";
 import { useNavigate } from "react-router";
 import "./Sing.css";
 

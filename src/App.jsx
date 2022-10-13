@@ -1,7 +1,9 @@
 import "./App.css";
 import { Route, Routes } from "react-router";
-import SignIn from "./signIn";
-import Home from "./home";
+import SignIn from "./components/signIn";
+import Home from "./components/home";
+import Read from "./components/read";
+import Videos from "./components/videos";
 
 export default function App() {
   return (
@@ -9,6 +11,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<SignIn />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/read" element={<Read />}></Route>
+        <Route path="videos" element={<Videos />}></Route>
       </Routes>
     </>
   );

@@ -1,8 +1,9 @@
 import React from "react";
-import "./headerstyle.css";
+import "./main.css";
 import "typeface-quicksand";
 import { useNavigate } from "react-router";
 import { gapi, loadAuth2 } from "gapi-script";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   let client =
@@ -36,7 +37,7 @@ export default function Header() {
           <input type="text" placeholder="Recherche..." />
         </div>
         <div className="accueil">
-          <a href="#">Accueil</a>
+          <Link to={"/home"}>Accueil</Link>
           <a href="#">Mon compte</a>
           <button onClick={logOut}>Deconnexion</button>
         </div>

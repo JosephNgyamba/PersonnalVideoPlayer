@@ -45,9 +45,12 @@ export default function SignIn() {
     <>
       <div className="content">
         <div className="content-element">
-          <h1>Bienvenue sur notre plate forme!</h1>
+          <h1>
+            Bienvenue sur notre plate forme!
+            <p>Powered By KDA</p>
+          </h1>
           <button id="btn_connexion">
-            <h2>PLAY</h2>
+            <h2>CONNEXION</h2>
           </button>
         </div>
       </div>

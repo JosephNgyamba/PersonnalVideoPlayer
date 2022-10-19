@@ -4,17 +4,22 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Videos() {
+  const token = localStorage.getItem("token");
   const [videos, setVideos] = useState([]);
-  const clé = "AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk";
-  const fetchVideo = ` https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=US&key=${clé}`;
 
   useEffect(() => {
-    fetch(fetchVideo)
-      .then((response) => response.json())
-      .then((data) => setVideos(data.items));
-  }, []);
-  console.log(videos);
+    const fetchData = () => {
+      fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=30&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
+          
+         ).then(response => response.json())
+          .then(data => {setVideos(data.items) 
+            console.log(videos);
+          });
+          console.log(videos);
+    }
 
+    fetchData();
+  }, []);
   return (
     <div className="video-list">
       {videos.map((item) => (

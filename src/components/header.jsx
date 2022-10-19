@@ -28,18 +28,14 @@ export default function Header() {
   return (
     <>
       <div className="header">
-        <img
-          src="images/vidlog-removebg-preview.png"
-          alt="Mon logo"
-          color="white"
-        ></img>
+        <span>J-videoPlayer</span>
         <div className="search">
           <input type="text" placeholder="Recherche..." />
         </div>
         <div className="accueil">
           <Link to={"/home"}>Accueil</Link>
-          <a href="#">Mon compte</a>
-          <button onClick={logOut}>Deconnexion</button>
+          <Link to={"/Abonnement"}>Abonnement </Link>
+          <button className="btn-disconect" onClick={logOut}>Deconnexion</button>
         </div>
       </div>
     </>

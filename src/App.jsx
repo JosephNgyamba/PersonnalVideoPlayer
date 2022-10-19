@@ -4,6 +4,7 @@ import SignIn from "./components/signIn";
 import Home from "./components/home";
 import Read from "./components/read";
 import Videos from "./components/videos";
+import Subscriptions from "./components/Abonnement";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/read/:id" element={<Read />}></Route>
         <Route path="/videos" element={<Videos />}></Route>
+        <Route path="/Abonnement" element={<Subscriptions/>}></Route>
       </Routes>
     </>
   );

@@ -8,17 +8,16 @@ export default function SignIn() {
   const navigate = useNavigate();
   // let access_token;
   let client =
-    "71694010182-v9dh8npv6bkonh2a0au9n0kseo2duhjq.apps.googleusercontent.com";
+    "71694010182-unufgf9qovrh55h9nahptqcc90vrj8q3.apps.googleusercontent.com";
 
   useEffect(() => {
     const setAuth = async () => {
-      //https://www.googleapis.com/auth/youtube
       const auth2 = await loadAuth2(gapi, client);
       if (!auth2.isSignedIn.get()) {
         attachSignIn(
           document.getElementById("btn_connexion"),
           auth2,
-          "https://www.googleapis.com/auth/youtube"
+          "https://www.googleapis.com/auth/youtube.force-ssl"
         );
       } else {
         auth2.signOut();
@@ -34,7 +33,7 @@ export default function SignIn() {
       {},
       (user) => {
         const token = user.xc.access_token;
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", JSON.stringify(token));
         navigate("/home");
         //console.log(user);
       },

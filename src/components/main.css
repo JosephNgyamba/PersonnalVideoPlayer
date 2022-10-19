@@ -4,25 +4,40 @@ body {
   font-family: "Quicksand";
 }
 .header {
-  border-bottom: 2px solid rgb(26, 118, 192);
-  background-color: rgb(26, 118, 192);
-  height: 50px;
+ background: linear-gradient(#c53535, #b13333d2) ;
+  height: 80px;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
+  position: fixed;
+  top: 0%;
+  width: 100%;
 }
-.usertools {
-  border-bottom: 2px solid rgb(26, 118, 192);
-  height: 50px;
-}
+
 .accueil {
   position: relative;
   margin-right: 10%;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 a {
   padding-left: 30px;
   text-decoration: none;
   color: rgb(255, 255, 255);
+  font-size:medium;
+}
+a:hover{
+  text-decoration: underline;
+}
+.btn-disconect{
+   width: 100px;
+  height: 30px;
+  color: rgb(214, 29, 29);
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  border: none;
+}
+.btn-disconect:hover{
+  cursor: pointer;
 }
 .search {
   position: absolute;
@@ -33,18 +48,31 @@ a {
 input {
   width: 400px;
   height: 30px;
+  border: 1px solid white;
+  margin-top: 20px;
+   border-radius: 15px 15px 15px 15px;
+   padding-left:20px ;
+}
+::placeholder{
+  text-align: center;
 }
 .video-list {
-  justify-content: center;
+  margin-top: 30px;
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
   margin-left: 5%;
 }
+/* .content-video{
+ 
+  text-align: center;
+} */
 .content-video img {
-  width: 180;
-  height: 200px;
+  width: 160;
+  height: 180px;
+  margin-right: 25px;
 }
 .content-video p {
   font-size: 10px;
@@ -61,6 +89,7 @@ input {
 
 .PhraseAccueil {
   text-align: center;
+  margin-top: 100px;
 }
 
 .PhraseAccueil h2 {
@@ -73,4 +102,33 @@ input {
 .read-content {
   display: flex;
   justify-content: center;
+}
+.categories{
+  display: flex;
+  width: 70%;
+  margin-left: 15%;
+  justify-content: center;
+  justify-content: space-between;
+}
+.categorie-type{
+  text-align: center;
+  background-color: rgb(167, 39, 0);
+  width: 100px;
+  height: 30px;
+  border-radius: 15px 15px 15px 15px;
+   border: 2px solid rgb(167, 39, 0);
+}
+.categorie-type p{
+  text-align: center;
+  margin-top:5px ;
+  color: white; 
+  
+}
+.categorie-type:hover{
+  background-color: white;
+  border: 2px solid  rgb(180, 36, 0);
+  cursor: pointer;
+}
+.categorie-type p:hover{
+  color: rgb(199, 44, 23) ;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./main.css";
 
 export default function Text() {
@@ -6,7 +7,16 @@ export default function Text() {
     <>
       <div className="PhraseAccueil">
         <h2>Bienvenue sur la Meilleur platforme de videos en ligne ...!</h2>
-        <p>Powered By KDA</p>
+      </div>
+      <div className="categories">
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
+        <div className="categorie-type"><p>Design</p></div>
       </div>
     </>
   );

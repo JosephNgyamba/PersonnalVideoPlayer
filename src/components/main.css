@@ -23,21 +23,26 @@ a {
   padding-left: 30px;
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size:medium;
+ 
 }
 a:hover{
   text-decoration: underline;
+ 
 }
 .btn-disconect{
    width: 100px;
   height: 30px;
   color: rgb(214, 29, 29);
   background-color: white;
+  border: 2px solid white;
   border-radius: 20px 20px 20px 20px;
   border: none;
 }
 .btn-disconect:hover{
   cursor: pointer;
+  color: white;
+   background-color: #c53535;
+  border: 2px solid white;
 }
 .search {
   position: absolute;
@@ -65,10 +70,9 @@ input {
   width: 90%;
   margin-left: 5%;
 }
-/* .content-video{
- 
+.content-video{
   text-align: center;
-} */
+} 
 .content-video img {
   width: 160;
   height: 180px;
@@ -79,6 +83,7 @@ input {
   text-decoration: none;
   text-align: center;
   color: black;
+  
 }
 
 .video-info {
@@ -131,4 +136,8 @@ input {
 }
 .categorie-type p:hover{
   color: rgb(199, 44, 23) ;
+}
+.login-button{
+  width: 10%;
+  height: 30px;
 }

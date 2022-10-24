@@ -17,8 +17,7 @@ export default function Subscriptions(){
        headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
     })
     .then(res=>res.json())
-    .then(data=> {setChain(data.items)}
-      )
+    .then(data=> setChain(data.items))
      
     }
      
@@ -31,8 +30,8 @@ export default function Subscriptions(){
         <Header />
         <Text /> 
         <div className="video-list">
-         {chain.length > 0 && chain.map((channel)=> (
-          <Link to={`/Channel/${channel.id}`} className="content-video" key={channel.id}>
+         {chain.length > 0 && chain.map((channel,index)=> (
+          <Link to={`/Channel/${channel.id}`} className="content-video" key={index}>
           <img src={channel.snippet.thumbnails.default.url}></img>
           <p>{channel.snippet.title}</p>
           </Link>)

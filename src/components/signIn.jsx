@@ -3,7 +3,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
-import axios from "axios";
 import "./Sing.css";
 
 export default function SignIn() {
@@ -34,7 +33,7 @@ export default function SignIn() {
       <div className="content">
         <div className="content-element">
           <h1>
-            Bienvenue sur J-VideoPlayer
+            -- Bienvenue sur J-VideoPlayer --
           </h1>
           <button id="btn_connexion" onClick={Login}>
             <p>se connecter avec Google</p>

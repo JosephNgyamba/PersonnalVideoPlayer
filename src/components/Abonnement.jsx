@@ -11,7 +11,7 @@ export default function Subscriptions(){
 
   useEffect(()=>{
     const fetchData=()=>{
-      fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
+      fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&maxResults=25&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
     {
       method:'GET',
        headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
@@ -31,7 +31,7 @@ export default function Subscriptions(){
         <Text /> 
         <div className="video-list">
          {chain.length > 0 && chain.map((channel,index)=> (
-          <Link to={`/Channel/${channel.id}`} className="content-video" key={index}>
+          <Link to={`/Channel/${channel.snippet.resourceId.channelId}`} className="content-video" key={index}>
           <img src={channel.snippet.thumbnails.default.url}></img>
           <p>{channel.snippet.title}</p>
           </Link>)

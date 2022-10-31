@@ -16,7 +16,7 @@ body {
 
 .accueil {
   position: relative;
-  margin-right: 10%;
+  margin-right: 5%;
   margin-top: 25px;
 }
 a {
@@ -46,17 +46,18 @@ a:hover{
 }
 .search {
   position: absolute;
-  left: 35%;
+  left: 20%;
   width: max-content;
   top: 2%;
 }
 input {
-  width: 400px;
+  width: 500px;
   height: 30px;
   border: 1px solid white;
   margin-top: 20px;
-   border-radius: 15px 15px 15px 15px;
-   padding-left:20px ;
+  border-radius: 15px 15px 15px 15px;
+  padding-left:20px ;
+
 }
 ::placeholder{
   text-align: center;

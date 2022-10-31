@@ -1,15 +1,19 @@
-import React from "react";
-
+import React,{ useState,useEffect,useRef } from "react";
 import Header from "./header";
 import Text from "./accroche";
-import Videos from "./videos";
+import DisplayVideos from "./displayvideos";
+
+
+
 
 export default function Home() {
+  
+ 
   return (
     <>
-      <Header />
-      <Text />
-      <Videos />
+      <Header/>
+      <Text/>
+      <DisplayVideos/>
     </>
   );
 }

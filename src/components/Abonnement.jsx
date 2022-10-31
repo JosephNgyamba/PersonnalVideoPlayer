@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./header";
 import Text from "./accroche";
 import "./main.css";
 import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
+import SearchResults from "./Searchresults";
+import { allcontext } from "./Mycontext";
 
 export default function Subscriptions(){
   let token = localStorage.getItem("token");
   const [chain, setChain] = useState([]);
+  const {searchingTerm} = useContext(allcontext)
+
+  console.log('searching term abonnement',searchingTerm)
 
   useEffect(()=>{
     const fetchData=()=>{

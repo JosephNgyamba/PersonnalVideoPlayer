@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./main.css";
+import Logout from "./exit";
 
 export default function Text() {
   return (
@@ -18,6 +19,7 @@ export default function Text() {
         <div className="categorie-type"><p>Design</p></div>
         <div className="categorie-type"><p>Design</p></div>
       </div>
+      <Logout/>
     </>
   );
 }

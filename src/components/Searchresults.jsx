@@ -15,9 +15,7 @@ export default function SearchResults(){
   let{id}=useParams()
 
     const {searchingTerm} = useContext(allcontext)
-
-    const searchTerm=useRef();
-    // console.log( searchTerm.current.value); 
+ 
     const [videos, setVideos]=useState([]);
 
     useEffect(()=>{
@@ -27,14 +25,8 @@ export default function SearchResults(){
       console.log(result.data.items)})
     },[searchingTerm])
 
-  //   const handleSearch = async (event) => {
-  //     event.preventDefault()
-    
-  //   const response = await  
 
-        
-  //      setVideos(response.data.items)
-  // }
+  
     return(
         <>
         <Header/>

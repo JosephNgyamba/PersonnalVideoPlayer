@@ -38,6 +38,5 @@ input:hover{
   border-radius: 100px;
   width: 40px;
   height: 40px;
-  cursor: pointer;
   border: solid 4px rgb(4, 134, 43);
 }

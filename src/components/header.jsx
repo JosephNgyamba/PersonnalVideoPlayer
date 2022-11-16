@@ -1,5 +1,6 @@
 import React from "react";
 import "./main.css";
+import "./header.css"
 import "typeface-quicksand";
 import { useNavigate } from "react-router";
 import { gapi, loadAuth2, loadAuth2WithProps } from "gapi-script";
@@ -7,31 +8,17 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useContext } from "react";
 import { allcontext } from "./Mycontext";
+import Logout from "./logout";
 
 export default function  Header() {
-  let client =
-    "71694010182-v9dh8npv6bkonh2a0au9n0kseo2duhjq.apps.googleusercontent.com";
+  
   
     const Navigate = useNavigate();
     const {searchingTerm, setSearchingTerm} = useContext(allcontext)
+    const profil= localStorage.getItem("profil")
+    const username= localStorage.getItem("username")
 
 
-  const logOut = () => {
-    const setAuth2 = async () => {
-      const auth2 = await loadAuth2(
-        gapi,
-        client,
-        "https://www.googleapis.com/auth/youtube"
-      );
-      if (auth2.isSignedIn.get()) {
-        auth2.signOut();
-      }
-    };
-    setAuth2().then(() => {
-      // switchIsLogin();
-      Navigate("/");
-    });
-  };
   const searchInput=useRef();
 
    const handleSearch = async (event) => {
@@ -39,22 +26,21 @@ export default function  Header() {
       setSearchingTerm(searchInput.current.value)
       Navigate("/Searchresults");
   }
- 
-  
+
   return (
     <>
       <div className="header">
-        <span>J-videoPlayer</span>
-        <div className="search">
+        <div className="header-items">
+        <div className="header-searchbar">
           <form onSubmit={handleSearch}>
-          <input ref={searchInput} type="text" placeholder="Recherche..." />
-          <button type="submit">Chercher</button>
+            <div>
+              <input ref={searchInput} type="text" placeholder="Recherche..." />
+          <button type="submit">...</button>
+            </div>
+          
           </form>
-        </div>
-        <div className="accueil">
-          <Link to={"/home"}>Accueil</Link>
-          <Link to={"/Abonnement"}>Abonnement </Link>
-          <button className="btn-disconect" onClick={logOut}>Deconnexion</button>
+        </div> 
+         <img src={profil}  className="header-user-profil"></img>
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
-import React,{ useState,useEffect,useRef } from "react";
+import React from "react";
 import Header from "./header";
-import Text from "./accroche";
 import DisplayVideos from "./displayvideos";
+import SideBar from "./sidebar";
 
 
 
@@ -11,8 +11,8 @@ export default function Home() {
  
   return (
     <>
+      <SideBar/>
       <Header/>
-      <Text/>
       <DisplayVideos/>
     </>
   );

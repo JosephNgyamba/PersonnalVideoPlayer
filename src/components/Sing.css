@@ -5,7 +5,7 @@
   top: 0%;
   display: flex;
   justify-content: center;
-    background: linear-gradient( #e753ce,#64ace6);
+  background-color: rgb(33, 141, 184);
 }
 .content-element {
   /* background: linear-gradient(#64ace6, #e753ce); */

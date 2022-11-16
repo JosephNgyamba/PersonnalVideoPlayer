@@ -1,17 +1,16 @@
 import React from "react";
 import "./main.css";
+import "./read.css";
 import Header from "./header";
-import Text from "./accroche";
 import { useParams } from "react-router-dom";
+import SideBar from "./sidebar";
 
 export default function Read() {
   let { id } = useParams();
   return (
     <>
+      <SideBar/>
       <Header />
-      <Text />
-      <p className="read-text">Profitez de nos meilleurs vidéos...</p>
-
       <div className="read-content">
         <iframe
           width="920"

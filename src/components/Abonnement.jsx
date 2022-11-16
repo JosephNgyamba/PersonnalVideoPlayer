@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Header from "./header";
-import Text from "./accroche";
 import "./main.css";
+import "./abonnement.css";
 import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
-import SearchResults from "./Searchresults";
 import { allcontext } from "./Mycontext";
+import SideBar from "./sidebar";
 
 export default function Subscriptions(){
   let token = localStorage.getItem("token");
@@ -32,13 +32,13 @@ export default function Subscriptions(){
    console.log(chain);
     return(
         <>
+        <SideBar/>
         <Header />
-        <Text /> 
         <div className="video-list">
          {chain.length > 0 && chain.map((channel,index)=> (
           <Link to={`/Channel/${channel.snippet.resourceId.channelId}`} className="content-video" key={index}>
-          <img src={channel.snippet.thumbnails.default.url}></img>
-          <p>{channel.snippet.title}</p>
+          <img src={channel.snippet.thumbnails.high.url}></img>
+          <h5 className="video-title" >{channel.snippet.title}</h5>
           </Link>)
          )}
         </div>

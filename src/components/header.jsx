@@ -1,10 +1,9 @@
 import React from "react";
-import "./main.css";
-import "./header.css"
+import "./Styles/header.css"
+import "./Styles/main.css"
 import "typeface-quicksand";
 import { useNavigate } from "react-router";
 import { gapi, loadAuth2, loadAuth2WithProps } from "gapi-script";
-import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useContext } from "react";
 import { allcontext } from "./Mycontext";
@@ -12,13 +11,10 @@ import Logout from "./logout";
 
 export default function  Header() {
   
-  
-    const Navigate = useNavigate();
+
+     const profil= localStorage.getItem("profil")
     const {searchingTerm, setSearchingTerm} = useContext(allcontext)
-    const profil= localStorage.getItem("profil")
-    const username= localStorage.getItem("username")
-
-
+   
   const searchInput=useRef();
 
    const handleSearch = async (event) => {
@@ -26,6 +22,23 @@ export default function  Header() {
       setSearchingTerm(searchInput.current.value)
       Navigate("/Searchresults");
   }
+   const Navigate=useNavigate(); 
+  const logOut = () => {
+    const setAuth2 = async () => {
+      const auth2 = await loadAuth2(
+        gapi,
+        client,
+        "https://www.googleapis.com/auth/youtube"
+      );
+      if (auth2.isSignedIn.get()) {
+        auth2.signOut();
+      }
+    };
+    setAuth2().then(() => {
+      // switchIsLogin();
+      Navigate("/");
+    });
+  };
 
   return (
     <>
@@ -40,7 +53,8 @@ export default function  Header() {
           
           </form>
         </div> 
-         <img src={profil}  className="header-user-profil"></img>
+         <button className="btn-disconect" onClick={logOut } >Deconnexion</button>
+         <img src={profil} className="header-user-profil"></img>
         </div>
       </div>
     </>

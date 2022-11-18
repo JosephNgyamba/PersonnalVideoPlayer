@@ -1,5 +1,7 @@
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router";
+import "./Styles/main.css"
+import "./Styles/login.css"
 
 export default function Login(){
 
@@ -21,13 +23,21 @@ export default function Login(){
 
     return(
         <>
+        <div className="login">
+        <div className="login-text">
+        <h1>Bienvenue sur</h1>
+        <h1>JvideoPlayer</h1>
+        <p>Powered by KDA</p>
          <GoogleLogin
           clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com"
           onSuccess={onSuccess}
           onFailure={onFailure}
            isSignedIn = { false }
           cookiePolicy = { 'single_host_origin' } 
+          buttonText={"CONNEXION"}
          />
+         </div>
+         </div>
         </>
     )
 }

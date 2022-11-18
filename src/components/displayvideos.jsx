@@ -1,6 +1,7 @@
 import {React,useState,useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./displayvideos.css";
+import "./Styles/displayvideos.css";
+import "./Styles/main.css"
 
 export default function Videos() {
 

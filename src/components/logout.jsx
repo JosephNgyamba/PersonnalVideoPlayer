@@ -1,5 +1,6 @@
 import { GoogleLogout } from "react-google-login";
 import { useNavigate } from "react-router";
+import "./Styles/main.css"
 
 export default function Logout(){
 

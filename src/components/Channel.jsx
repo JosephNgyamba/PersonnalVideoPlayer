@@ -3,8 +3,8 @@ import { useParams } from "react-router";
 import Header from "./header";
 import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
-import './main.css';
 import SideBar from "./sidebar";
+import "./Styles/main.css"
 
 export default function Channel(){
     const[chaine,setChaine]=useState([]);

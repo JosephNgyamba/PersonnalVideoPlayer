@@ -1,6 +1,6 @@
 import React from "react";
-import "./main.css";
-import "./read.css";
+import "./Styles/read.css";
+import "./Styles/main.css"
 import Header from "./header";
 import { useParams } from "react-router-dom";
 import SideBar from "./sidebar";

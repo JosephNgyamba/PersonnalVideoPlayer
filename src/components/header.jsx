@@ -9,9 +9,11 @@ import { useContext } from "react";
 import { allcontext } from "./Mycontext";
 import Logout from "./logout";
 
+
 export default function  Header() {
   
-
+    const client =
+    "71694010182-v9dh8npv6bkonh2a0au9n0kseo2duhjq.apps.googleusercontent.com";  
      const profil= localStorage.getItem("profil")
     const {searchingTerm, setSearchingTerm} = useContext(allcontext)
    
@@ -48,12 +50,12 @@ export default function  Header() {
           <form onSubmit={handleSearch}>
             <div>
               <input ref={searchInput} type="text" placeholder="Recherche..." />
-          <button type="submit">...</button>
+              <button type="submit" className="btn-search"><i id="fa-brands" class="fa-brands fa-sistrix"></i></button>
             </div>
-          
           </form>
         </div> 
-         <button className="btn-disconect" onClick={logOut } >Deconnexion</button>
+        <Logout/>
+         {/* <button className="btn-disconect" onClick={logOut } >Deconnexion</button> */}
          <img src={profil} className="header-user-profil"></img>
         </div>
       </div>

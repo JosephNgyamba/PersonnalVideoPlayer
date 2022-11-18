@@ -34,11 +34,11 @@ export default function Subscriptions(){
         <>
         <SideBar/>
         <Header />
-        <div className="video-list">
+        <div className="abonnement-video-list">
          {chain.length > 0 && chain.map((channel,index)=> (
-          <Link to={`/Channel/${channel.snippet.resourceId.channelId}`} className="content-video" key={index}>
+          <Link to={`/Channel/${channel.snippet.resourceId.channelId}`} className="abonnement-content-video" key={index}>
           <img src={channel.snippet.thumbnails.high.url}></img>
-          <h5 className="video-title" >{channel.snippet.title}</h5>
+          <div className="abonnement-video-title"><h6>{channel.snippet.title}</h6></div>
           </Link>)
          )}
         </div>

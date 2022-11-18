@@ -19,15 +19,11 @@
   /* border: solid 1px yellow; */
 }
 input {
-  width: 500px;
+  width: 400px;
   height: 30px;
-  border: 1px solid rgb(236, 234, 234);
-  border-radius: 15px 15px 15px 15px;
+  border: none;
+  border-radius: 15px 0px 0px 15px;
   padding-left:20px ;
-  margin-top: 2%;
-}
-input:hover{
-  border: 1px solid rgb(233, 41, 41);
 }
 ::placeholder{
   text-align: center;
@@ -39,4 +35,24 @@ input:hover{
   width: 30px;
   height: 30px;
   border: solid 1px green;
+}
+form div{
+  width: 480px;
+  display: flex;
+  border: solid 1px rgb(172, 175, 172);
+ margin-top: 10px;
+  border-radius: 20px 20px 20px 20px;
+}
+.btn-search{
+  height: 25px;
+  margin-top: 3px;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+}
+.fa-brands{
+  font-size: 25px;
+}
+.fa-brands:hover{
+  color: red;
 }

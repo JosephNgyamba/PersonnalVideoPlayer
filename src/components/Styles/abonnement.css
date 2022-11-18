@@ -1,7 +1,22 @@
-img {
-    margin-top: -20px;
-  height: 200px;
-  width: 220px;
-  float: left;
-  /* border-radius: 100px; */
+.abonnement-video-list{
+  margin-top: 10%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+  margin-left: 20.5%;
+}
+.abonnement-content-video img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+}
+.abonnement-content-video h6{
+  color: black;
+  margin-left: 15px;
+  text-align: center;
+}
+.abonnement-video-title{
+  width:150px ;
 }

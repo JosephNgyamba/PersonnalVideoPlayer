@@ -11,8 +11,7 @@ export default function SideBar(){
     
     const profil= localStorage.getItem("profil")
     const username= localStorage.getItem("username")
-    const client =
-    "71694010182-v9dh8npv6bkonh2a0au9n0kseo2duhjq.apps.googleusercontent.com";
+    
 
     // ------fetch des chaines abonnées---------- //
 

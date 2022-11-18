@@ -5,6 +5,7 @@ import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 import SideBar from "./sidebar";
 import "./Styles/main.css"
+import "./Styles/channel.css"
 
 export default function Channel(){
     const[chaine,setChaine]=useState([]);
@@ -29,11 +30,12 @@ export default function Channel(){
         <>   
             <SideBar/>
             <Header/>
-            <div className="video-list">
-            {chaine.map((list,index)=>(<Link to={`/read/${list.id.videoId}`} className="content-video" key={index}>
+            <div className="channel-profil"></div>
+            <div className="channel-list">
+            {chaine.map((list,index)=>(<Link to={`/read/${list.id.videoId}`} className="channel-content-video" key={index}>
           <img src={list.snippet.thumbnails.high.url}></img>
             <div className="video-info">
-                <h5 className="video-title">{list.snippet.title}</h5>
+                <h6>{list.snippet.title}</h6>
             </div>
           </Link>))}
           </div>

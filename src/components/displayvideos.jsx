@@ -5,6 +5,7 @@ import "./Styles/main.css"
 
 export default function Videos() {
 
+  const username= localStorage.getItem("username")
 const [videos, setVideos] = useState([]);
  useEffect(() => {
     const fetchData = () => {
@@ -20,16 +21,18 @@ const [videos, setVideos] = useState([]);
   }, []);
 
   return (
-    <div className="video-list">
+    <>
+    <div className="welcome-message"><h3>Bienvenu,<span></span> <span>{username}</span></h3>
+    <p> sur <strong>JvideoPlayer,</strong>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam animi eius tenetur nemo vel, quae voluptatem blanditiis necessitatibus accusamus laudantium incidunt adipisci possimus reiciendis, doloribus dignissimos debitis quisquam enim dolorem.</p></div>
+    <div className="display-video-list">
       {videos.map((item,index) => (
-        <div className="content-video" ><Link to={`/read/${item.id}`} key={index}>
+        <div className="display-content-video" ><Link to={`/read/${item.id}`} key={index}>
           <img src={item.snippet.thumbnails.high.url}></img>
-          <div className="video-info">
-            <h5 className="video-title">{item.snippet.title}</h5>
-          </div>
+            <h6>{item.snippet.title}</h6>
         </Link>
         </div>
       ))}
     </div>
+    </>
   );
 }

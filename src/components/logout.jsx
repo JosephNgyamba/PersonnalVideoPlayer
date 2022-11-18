@@ -14,6 +14,7 @@ export default function Logout(){
             <GoogleLogout
             clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com"
              onLogoutSuccess={out}
+             buttonText={'Deconnexion'}
             />
         </>
     )

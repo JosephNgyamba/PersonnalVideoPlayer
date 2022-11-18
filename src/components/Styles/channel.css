@@ -5,7 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 75%;
-  margin-left: 20.5%;
+  margin-left: 22.5%;
 }
 .channel-content-video img {
   height: 200px;
@@ -22,4 +22,7 @@
 .channel-content-video h6{
   color: black;
   margin-left: 15px;
+}
+.channel-content-video:hover{
+   box-shadow: 0px 0px 15px 0px rgba(73, 71, 71, 0.486);
 }

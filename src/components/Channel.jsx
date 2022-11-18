@@ -32,12 +32,14 @@ export default function Channel(){
             <Header/>
             <div className="channel-profil"></div>
             <div className="channel-list">
-            {chaine.map((list,index)=>(<Link to={`/read/${list.id.videoId}`} className="channel-content-video" key={index}>
+            {chaine.map((list,index)=>(
+                <div className="channel-content-video">
+            <Link to={`/read/${list.id.videoId}`} key={index}>
           <img src={list.snippet.thumbnails.high.url}></img>
             <div className="video-info">
                 <h6>{list.snippet.title}</h6>
             </div>
-          </Link>))}
+          </Link></div>))}
           </div>
         </>
     )

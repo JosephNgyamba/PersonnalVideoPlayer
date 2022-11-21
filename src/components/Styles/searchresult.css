@@ -1,0 +1,25 @@
+.search-video-list {
+  margin-top: 10%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+  margin-left: 22%;
+}
+.search-content-video{
+ margin-bottom: 50px;
+ background-color: #f1f1f3;;
+ width: 220px;
+ height: 300px;
+}
+.search-content-video img {
+  height: 200px;
+  width: 220px;
+  float: left;
+  padding-bottom:10px;
+}
+.search-content-video h6{
+  color: black;
+  margin-left: 15px;
+}

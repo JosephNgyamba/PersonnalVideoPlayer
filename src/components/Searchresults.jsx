@@ -7,6 +7,7 @@ import { allcontext } from "./Mycontext";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SideBar from "./sidebar";
+import './Styles/searchresult.css'
 
 
 
@@ -30,14 +31,13 @@ export default function SearchResults(){
         <>
         <SideBar/>
         <Header/>
-         <div className="video-list">
+         <div className="search-video-list">
       {videos.map((item,index) => (
-        <Link to={`/read/${item.id.videoId}`} className="content-video" key={index}>
+        <div className="search-content-video" ><Link to={`/read/${item.id}`} key={index}>
           <img src={item.snippet.thumbnails.high.url}></img>
-          <div className="video-info">
-            <h5 className="video-title">{item.snippet.title}</h5>
-          </div>
+            <h6>{item.snippet.title}</h6>
         </Link>
+        </div>
       ))}
     </div>
         </>

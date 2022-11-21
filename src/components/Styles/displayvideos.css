@@ -20,6 +20,7 @@
 .welcome-message p{
   font-size: 12px;
   text-align: center;
+  color: black;
 }
 .display-content-video{
  margin-bottom: 50px;

@@ -9,6 +9,7 @@ import Channel from "./components/Channel";
 import SearchResults from "./components/Searchresults";
 import { allcontext } from "./components/Mycontext";
 import { useState } from "react";
+import ResignIn from "./components/ResignIn";
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/Channel/:id" element={<Channel/>}></Route>
         <Route path="/Searchresults/" element={<SearchResults/>}></Route>
         <Route path="/Searchresults/:id/" element={<SearchResults/>}></Route>
+        <Route path="/ResignIn" element={<ResignIn/>}></Route>
       </Routes>
       </allcontext.Provider>
     </>

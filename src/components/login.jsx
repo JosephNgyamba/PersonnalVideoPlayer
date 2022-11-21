@@ -12,8 +12,6 @@ export default function Login(){
             localStorage.setItem("token",res.accessToken)
             localStorage.setItem("profil", res.profileObj.imageUrl)
             localStorage.setItem("username",res.profileObj.name)
-
-        
             Navigate('/home')
     }
     
@@ -23,11 +21,6 @@ export default function Login(){
 
     return(
         <>
-        <div className="login">
-        <div className="login-text">
-        <h1>Bienvenue sur</h1>
-        <h1>JvideoPlayer</h1>
-        <p>Powered by KDA</p>
          <GoogleLogin
           clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com"
           onSuccess={onSuccess}
@@ -36,8 +29,6 @@ export default function Login(){
           cookiePolicy = { 'single_host_origin' } 
           buttonText={"CONNEXION"}
          />
-         </div>
-         </div>
         </>
     )
 }

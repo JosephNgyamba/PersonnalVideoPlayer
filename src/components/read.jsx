@@ -12,19 +12,29 @@ export default function Read() {
  const comment =()=>{
   alert('commentaire')
  }
+const [videoId,setVideoId]=useState([]);
 const [videos, setVideos] = useState([]);
+
  useEffect(() => {
     const fetchData = () => {
       fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=30&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
           
          ).then(response => response.json())
-          .then(data =>{setVideos(data.items), console.log(data)   
-          } )  
-              
+          .then(data =>{setVideos(data.items)
+          } )           
     }
-    
     fetchData();
   }, []);
+  useEffect(()=>{
+    const fetchData=()=>{
+    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${id}&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk`)
+    .then(res=>res.json())
+    .then(data=>{setVideoId(data.items)});
+  }
+  fetchData()
+},[]);
+console.log(videoId[0]);
+  
   return (
     <>
       <SideBar/>
@@ -36,6 +46,9 @@ const [videos, setVideos] = useState([]);
           height="520"
           src={`https://www.youtube.com/embed/${id}`}
         ></iframe>
+        <div className="read-description">
+          {/* <h2>{videoId.snippet.title}</h2> */}
+        </div>
         <div className="read-comment">
           <img src={profil} className="comment-user-profil"></img><span className="commet-username">{username}</span>
           <form  action="" onSubmit={comment} >

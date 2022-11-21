@@ -1,13 +1,13 @@
 import { GoogleLogout } from "react-google-login";
 import { useNavigate } from "react-router";
+import ResignIn from "./ResignIn";
 import "./Styles/main.css"
 
 export default function Logout(){
 
     const Navigate=useNavigate();
-    const out=(res)=>{
-        Navigate('/')
-            console.log('quitter');
+    const out=()=>{
+        Navigate('/ResignIn')
     }
     return (
         <>

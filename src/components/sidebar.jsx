@@ -39,7 +39,7 @@ export default function SideBar(){
     return(
         <>
             <div className="sidebar">
-             <Link to={"/home"}> <h2>J-VideoPlayer</h2><p>Powered by KDA</p> </Link> 
+             <Link to={"/home"}> <h2>J-VideoPlayer</h2><p>Powered by <strong>KDA</strong></p> </Link> 
              <div className="sidebar-menu">
                <div className="sidebar-user"><img src={profil} className="sidebar-user-profil"></img>
                 <h4 className="sidebar-user-name">{username}</h4></div>

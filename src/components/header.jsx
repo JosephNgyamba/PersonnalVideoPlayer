@@ -47,7 +47,7 @@ export default function  Header() {
       <div className="header">
         <div className="header-items">
         <div className="header-searchbar">
-          <form onSubmit={handleSearch}>
+          <form className="header-seachbar-form" onSubmit={handleSearch}>
             <div>
               <input ref={searchInput} type="text" placeholder="Recherche..." />
               <button type="submit" className="btn-search"><i id="fa-brands" class="fa-brands fa-sistrix"></i></button>

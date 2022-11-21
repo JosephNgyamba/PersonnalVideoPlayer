@@ -18,12 +18,13 @@
   margin-top: 1%;
   /* border: solid 1px yellow; */
 }
-input {
+.header-searchbar input {
   width: 400px;
   height: 30px;
   border: none;
   border-radius: 15px 0px 0px 15px;
   padding-left:20px ;
+  background:transparent;
 }
 ::placeholder{
   text-align: center;
@@ -36,7 +37,7 @@ input {
   height: 30px;
   border: solid 1px green;
 }
-form div{
+.header-seachbar-form div{
   width: 480px;
   display: flex;
   border: solid 1px rgb(172, 175, 172);
@@ -46,9 +47,9 @@ form div{
 .btn-search{
   height: 25px;
   margin-top: 3px;
-  background-color: white;
   cursor: pointer;
   border: none;
+  background:transparent;
 }
 .fa-brands{
   font-size: 25px;

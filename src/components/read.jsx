@@ -5,12 +5,23 @@ import Header from "./header";
 import { useParams,Link } from "react-router-dom";
 import SideBar from "./sidebar";
 
+
+
 export default function Read() {
+
+  const userId = "yuhddkflksdhlhsdf"
+
+  const [com, setCom] =useState("")
+  const [comRed, setComRed] =useState(null)
+
   let { id } = useParams();
   const profil= localStorage.getItem("profil");
   const username= localStorage.getItem("username");
- const comment =()=>{
-  alert('commentaire')
+ const comment =(e)=>{
+  e.preventDefault()
+  setComRed(com)
+  alert("idVideo : "+id +", idUser : "+userId + " msg : " +com)
+  setCom("")
  }
 const [videoId,setVideoId]=useState([]);
 const [videos, setVideos] = useState([]);
@@ -25,15 +36,15 @@ const [videos, setVideos] = useState([]);
     }
     fetchData();
   }, []);
-  useEffect(()=>{
-    const fetchData=()=>{
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${id}&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk`)
-    .then(res=>res.json())
-    .then(data=>{setVideoId(data.items)});
-  }
-  fetchData()
-},[]);
-console.log(videoId[0]);
+//   useEffect(()=>{
+//     const fetchData=()=>{
+//     fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${id}&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk`)
+//     .then(res=>res.json())
+//     .then(data=>{setVideoId(data.items)});
+//   }
+//   fetchData()
+// },[]);
+// console.log(videoId[0]);
   
   return (
     <>
@@ -52,10 +63,15 @@ console.log(videoId[0]);
         <div className="read-comment">
           <img src={profil} className="comment-user-profil"></img><span className="commet-username">{username}</span>
           <form  action="" onSubmit={comment} >
-            <div className="read-form-textarea"><textarea  type="text"  placeholder="Laissez un commentaire"/></div>
+            <div className="read-form-textarea"><textarea  type="text" onChange={(e) => setCom(e.target.value)} value={com} placeholder="Laissez un commentaire"/></div>
             <button>Commenter</button>
           </form>
         </div>
+        { comRed ? <div className="read-commentaire">
+          <hr />
+          <img src={profil} className="comment-user-profil" />
+          <span className="user-comment">{username} : {comRed}</span>
+        </div> : null}
         </div>
         <div className="read-outside-video">
           {videos.map((item,index) => (

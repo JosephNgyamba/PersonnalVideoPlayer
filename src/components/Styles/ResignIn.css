@@ -6,12 +6,7 @@
   border: none;
   font-weight: bold;
 }
-.resignIn-button button:hover{
-        background-color: green;
-}
-.resignIn-content:hover{
-  box-shadow: 0px 0px 30px 0px rgba(243, 22, 15, 0.74);
-}
+
 .resignIn {
   width: 100%;
   height: 768px;
@@ -24,12 +19,10 @@
 .resignIn-content {
   width: 25%;
   height:500px;
-  box-shadow: 0px 0px 30px 0px rgba(233, 233, 233, 0.274);
-  border-radius: 30px 30px 30px 30px;
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  margin-top: 15%;
+  margin-top:5%;
   z-index: 100;
 }
 .resignIn-text{
@@ -41,5 +34,7 @@
 }
 .resignIn-button{
   margin-left:32.5%;
-  margin-top: 50%;
+}
+.resignIn-button button:hover{
+  background-color: rgb(243, 221, 28);
 }

@@ -27,9 +27,12 @@
  background-color: #f1f1f3;;
  width: 220px;
  height: 300px;
+ box-shadow: 0px 0px 15px 0px rgba(73, 71, 71, 0.486);
+ transition: transform.2s;
 }
 .display-content-video:hover{
-   box-shadow: 0px 0px 15px 0px rgba(73, 71, 71, 0.486);
+  transform: scale(1.1);
+  background-color: white;
 }
 .display-content-video img {
    

@@ -125,4 +125,7 @@ a:hover{
   color: rgb(150, 2, 2);
    background-color: #ffffff;
 }
-
+.active, .sidebar-menu-items:hover {
+  background-color: #666;
+  color: white;
+}

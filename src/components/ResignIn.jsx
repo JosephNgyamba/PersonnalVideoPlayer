@@ -14,7 +14,7 @@ export default function ResignIn(){
             <div className="resignIn">
           <div className="resignIn-content">
           <div className="resignIn-text">
-            <h1>A bientot</h1>
+            <h1>A bientôt</h1>
           </div>
             <div className="resignIn-button">
             <button onClick={Back} >RECONNEXION</button>

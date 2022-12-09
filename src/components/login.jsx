@@ -5,7 +5,7 @@ import "./Styles/login.css"
 
 export default function Login(){
 
-    const clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com";
+    // const clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com";
     const Navigate=useNavigate();
     const onSuccess=(res)=>{
             console.log(res);

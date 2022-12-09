@@ -5,6 +5,7 @@ import "./Styles/sidebar.css";
 import "./Styles/main.css"
 
 
+let token = localStorage.getItem("token");
 
 export default function SideBar(){
 
@@ -15,25 +16,25 @@ export default function SideBar(){
 
     // ------fetch des chaines abonnées---------- //
 
-  let token = localStorage.getItem("token");
+  
   const [chain, setChain] = useState([]);
 
 
-  useEffect(()=>{
-    const fetchData=()=>{
-      fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&maxResults=5&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
-    {
-      method:'GET',
-       headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
-    })
-    .then(res=>res.json())
-    .then(data=> setChain(data.items))
+  // useEffect(()=>{
+  //   const fetchData=()=>{
+  //     fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&maxResults=5&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
+  //   {
+  //     method:'GET',
+  //      headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
+  //   })
+  //   .then(res=>res.json())
+  //   .then(data=> setChain(data.items))
      
-    }
+  //   }
      
-    fetchData();
+  //   fetchData();
    
-  },[]);
+  // },[]);
    
 
     return(
@@ -44,8 +45,8 @@ export default function SideBar(){
                <div className="sidebar-user"><img src={profil} className="sidebar-user-profil"></img>
                 <h4 className="sidebar-user-name">{username}</h4></div>
                 <div className="sidebar-menu-items">
-                <div className="sidebar-menu-items-accueil"><Link to={"/home"}><h4>Accueil</h4></Link></div>
-                <div className="sidebar-menu-items-abonnement"><Link to={"/Abonnement"}><h4>Mes Abonnements</h4></Link></div> 
+                <div className="sidebar-menu-items-accueil active"><Link to={"/home"}><h4 >Accueil</h4></Link></div>
+                <div className="sidebar-menu-items-abonnement"><Link to={"/Abonnement"}><h4 >Mes Abonnements</h4></Link></div> 
                 <div className="sidebar-menu-items-abonnement-channel">
                   {chain.length > 0 && chain.map((channel,index)=> (
                <div className="sidebar-menu-items-abonnement-channel-list"> <Link to={`/Channel/${channel.snippet.resourceId.channelId}`}  key={index}>

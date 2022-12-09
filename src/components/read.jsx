@@ -68,7 +68,6 @@ const [videos, setVideos] = useState([]);
           </form>
         </div>
         { comRed ? <div className="read-commentaire">
-          <hr />
           <img src={profil} className="comment-user-profil" />
           <span className="user-comment">{username} : {comRed}</span>
         </div> : null}

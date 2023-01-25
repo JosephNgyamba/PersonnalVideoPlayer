@@ -12,9 +12,8 @@ const [videos, setVideos] = useState([]);
       fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=30&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
           
          ).then(response => response.json())
-          .then(data =>{setVideos(data.items), console.log(data)   
-          } )  
-              
+          .then(data =>{setVideos(data.items)  
+          } )                
     }
     
     fetchData();

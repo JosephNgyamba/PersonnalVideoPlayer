@@ -1,13 +1,13 @@
 import React from "react";
-import "./Styles/header.css"
-import "./Styles/main.css"
-import "typeface-quicksand";
 import { useNavigate } from "react-router";
 import { gapi, loadAuth2, loadAuth2WithProps } from "gapi-script";
 import { useRef } from "react";
 import { useContext } from "react";
 import { allcontext } from "./Mycontext";
 import Logout from "./logout";
+import "./Styles/header.css"
+import "./Styles/main.css"
+import "typeface-quicksand";
 
 
 export default function  Header() {
@@ -21,9 +21,10 @@ export default function  Header() {
 
    const handleSearch = async (event) => {
       event.preventDefault()
-      setSearchingTerm(searchInput.current.value)
+      setSearchingTerm(searchInput.current.value);
       Navigate("/Searchresults");
-  }
+  } 
+
    const Navigate=useNavigate(); 
   const logOut = () => {
     const setAuth2 = async () => {

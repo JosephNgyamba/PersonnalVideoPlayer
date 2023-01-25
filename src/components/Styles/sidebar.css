@@ -72,7 +72,7 @@
   text-align: center;
 }
 .sidebar-menu-items-abonnement:hover{
-  background-color: rgba(161, 159, 159, 0.637);
+  background-color: rgb(207, 7, 7);
 }
 
 .sidebar-menu-items-abonnement-channel{
@@ -124,8 +124,4 @@ a:hover{
   cursor: pointer;
   color: rgb(150, 2, 2);
    background-color: #ffffff;
-}
-.active, .sidebar-menu-items:hover {
-  background-color: #666;
-  color: white;
 }

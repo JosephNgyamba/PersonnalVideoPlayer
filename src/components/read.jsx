@@ -1,39 +1,61 @@
 import {React,useState,useEffect} from "react";
+// import { useRef } from "react";
+import axios from 'axios';
+import { useParams,Link } from "react-router-dom";
+import Header from "./header";
+import SideBar from "./sidebar";
 import "./Styles/read.css";
 import "./Styles/main.css"
-import Header from "./header";
-import { useParams,Link } from "react-router-dom";
-import SideBar from "./sidebar";
 
 export default function Read() {
+  
   let { id } = useParams();
+
   const profil= localStorage.getItem("profil");
   const username= localStorage.getItem("username");
- const comment =()=>{
-  alert('commentaire')
- }
-const [videoId,setVideoId]=useState([]);
-const [videos, setVideos] = useState([]);
 
- useEffect(() => {
-    const fetchData = () => {
-      fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=30&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
-          
-         ).then(response => response.json())
-          .then(data =>{setVideos(data.items)
-          } )           
-    }
-    fetchData();
-  }, []);
+  const [comments,setComments]=useState("");
+  const [mycomments,setMycomments]=useState([]);
+  const [videoId,setVideoId]=useState([]);
+  const [videos, setVideos] = useState([]);
+  const [likes,setLike]=useState(0);
+
+  const counter=(event)=>{
+    event.preventDefault();
+    setLike(likes+1)
+  }
+  const uncounter=(event)=>{
+    event.preventDefault();
+    setLike(likes-1)
+  }
+ 
+  const response=(event)=>{
+    event.preventDefault();
+      alert('response')
+  }
+   console.log('compteur'+':' +likes);
+ const comment = async (e)=>{
+        const data ={}
+         data.userName = username 
+         data.comments = comments
+         data.userProfile=profil
+
+        e.preventDefault();
+        const sendComment= await axios.post('http://localhost:3000/comments/post',data);
+        alert("affiche mon commentaire"+":"+comments);
+        setComments('');
+ }
+console.log("affiche mon commentaire"+":"+comments);
+
   useEffect(()=>{
     const fetchData=()=>{
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${id}&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk`)
+    fetch('http://localhost:3000/comments/get')
     .then(res=>res.json())
-    .then(data=>{setVideoId(data.items)});
+    .then(data=>{setMycomments(data)});
   }
   fetchData()
 },[]);
-console.log(videoId[0]);
+ console.log(mycomments);
   
   return (
     <>
@@ -47,26 +69,35 @@ console.log(videoId[0]);
           src={`https://www.youtube.com/embed/${id}`}
         ></iframe>
         <div className="read-description">
-          {/* <h2>{videoId.snippet.title}</h2> */}
         </div>
         <div className="read-comment">
           <img src={profil} className="comment-user-profil"></img><span className="commet-username">{username}</span>
-          <form  action="" onSubmit={comment} >
-            <div className="read-form-textarea"><textarea  type="text"  placeholder="Laissez un commentaire"/></div>
+          <form  action="" method="POST" onSubmit={comment} >
+            <div className="read-form-textarea" >
+              <textarea value={comments}  type="text"  placeholder="Laissez un commentaire" onChange={(e)=>{
+              setComments(e.target.value)
+            }}>
+            </textarea> </div>
             <button>Commenter</button>
           </form>
         </div>
-        </div>
-        <div className="read-outside-video">
-          {videos.map((item,index) => (
-        <div className="read-content-video" ><Link to={`/read/${item.id}`} key={index}>
-          <img src={item.snippet.thumbnails.high.url}></img>
-        </Link>
        
-        </div> 
-      ))}
+        
         </div>
       </div>
+      <br />
+       <div>
+          {mycomments.map((element,index)=>(
+            <div className="read-display-comments" key={index}>
+              
+              <div><img className="comments-user-profil" src={profil}></img><p className="user-name">{username}</p>
+             </div>
+              <div className="user-comment"><p ><strong>{element.comments}</strong></p></div>
+              
+              <div className="comments-liked"><span>{likes}<i class="fa-regular fa-thumbs-up" onClick={counter}></i><i class="fa-regular fa-thumbs-down" onClick={uncounter}></i></span><span className="comments-response"  onClick={response}>repondre</span> </div>
+            </div>  
+        ))}
+        </div>
     </>
   );
 }

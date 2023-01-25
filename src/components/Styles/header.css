@@ -60,3 +60,50 @@
 .fa-brands:hover{
   color: red;
 }
+.pop-up{
+  width:30%;
+  height: 500px;
+  margin-left: 600px;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.932);
+  box-shadow: 0px 0px 15px 0px rgba(197, 194, 194, 0.911);
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.pop-up h2{
+  color:red;
+}
+.closePop-up{
+  margin-top: 20px;
+  width: 10%;
+}
+.pop-up form{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-up form input{
+  height: 30px;
+  border:1px solid rgba(0, 3, 31, 1);
+  border-radius: 10px;
+}
+.saveUser{
+  margin-top: 20px;
+  border-radius: 10px;
+  height: 30px;
+  border: none;
+  background-color:rgba(0, 3, 31, 1); 
+  color: white;
+  font-weight: bolder;
+
+}
+.exitIcon{
+  display: block;
+  float: left;
+  color: red;
+}

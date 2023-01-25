@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { gapi, loadAuth2, loadAuth2WithProps } from "gapi-script";
-import { useRef } from "react";
+import { useRef ,useState} from "react";
 import { useContext } from "react";
 import { allcontext } from "./Mycontext";
 import Popup from 'reactjs-popup';
@@ -16,8 +16,10 @@ export default function  Header() {
   
     const client =
     "71694010182-v9dh8npv6bkonh2a0au9n0kseo2duhjq.apps.googleusercontent.com";  
-     const profil= localStorage.getItem("profil")
-    const {searchingTerm, setSearchingTerm} = useContext(allcontext)
+     const profil= localStorage.getItem("profil");
+
+    const {searchingTerm, setSearchingTerm} = useContext(allcontext);
+    const [userPop,setUserPop]=useState(false);
    
   const searchInput=useRef();
 
@@ -46,10 +48,7 @@ export default function  Header() {
   };
   const customize=(event)=>{
     event.preventDefault();
-     <Popup trigger={<button> Trigger</button>} position="right center">
-    <div>Popup content here !!</div>
-  </Popup>
-  alert('bonjour')
+    setUserPop(!userPop);
   }
   return (
     <>
@@ -67,6 +66,18 @@ export default function  Header() {
          {/* <button className="btn-disconect" onClick={logOut } >Deconnexion</button> */}
          <img src={profil} className="header-user-profil" onClick={customize}  title='User-Profil'></img>
         </div>
+        {userPop && (<div className="pop-up">
+        <h2>Modifier votre profil</h2><span className="exitIcon"><i class="fa-solid fa-circle-xmark" onClick={customize}></i></span>
+        <form action="">
+          <input type="text"  placeholder="Nom" /> <br />
+          <input type="text"  placeholder="Prenom"/> <br />
+          <input type="text"  placeholder="Lien du profil"/><br />
+          <input type="text" name="" id= "" placeholder="Facebook" /> <br />
+          <input type="text" name="" id= "" placeholder="Github" /><br />
+          <button className="saveUser" type="submit">Enregistrer</button>
+        </form>
+      </div>)}
+         
       </div>
     </>
   );

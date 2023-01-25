@@ -121,11 +121,14 @@ textarea::placeholder{
   color: red;
 }
 .comments-response{
-  margin-left: 20px;
+  margin-left: 05px;
   font-weight: bolder;
  
 }
 .comments-response:hover{
  color: rgb(28, 146, 48);
   cursor: pointer;
+}
+.fa-share{
+  margin-left: 70px;
 }

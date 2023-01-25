@@ -4,6 +4,8 @@ import { gapi, loadAuth2, loadAuth2WithProps } from "gapi-script";
 import { useRef } from "react";
 import { useContext } from "react";
 import { allcontext } from "./Mycontext";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import Logout from "./logout";
 import "./Styles/header.css"
 import "./Styles/main.css"
@@ -42,7 +44,13 @@ export default function  Header() {
       Navigate("/");
     });
   };
-
+  const customize=(event)=>{
+    event.preventDefault();
+     <Popup trigger={<button> Trigger</button>} position="right center">
+    <div>Popup content here !!</div>
+  </Popup>
+  alert('bonjour')
+  }
   return (
     <>
       <div className="header">
@@ -57,7 +65,7 @@ export default function  Header() {
         </div> 
         <Logout/>
          {/* <button className="btn-disconect" onClick={logOut } >Deconnexion</button> */}
-         <img src={profil} className="header-user-profil"></img>
+         <img src={profil} className="header-user-profil" onClick={customize}  title='User-Profil'></img>
         </div>
       </div>
     </>

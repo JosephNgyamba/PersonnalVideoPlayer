@@ -19,14 +19,19 @@ export default function Read() {
   const [videoId,setVideoId]=useState([]);
   const [videos, setVideos] = useState([]);
   const [likes,setLike]=useState(0);
+  const[myLikes,setMylikes]=useState()
 
-  const counter=(event)=>{
+  const counter=async (event)=>{
     event.preventDefault();
-    setLike(likes+1)
+    setLike(likes+1);
+     const sendLike= await axios.post('http://localhost:3000/likes/post',
+    {likes})
   }
-  const uncounter=(event)=>{
+  const uncounter=async (event)=>{
     event.preventDefault();
     setLike(likes-1)
+    const sendLike= await axios.post('http://localhost:3000/likes/post',
+    {likes})
   }
  
   const response=(event)=>{
@@ -42,7 +47,7 @@ export default function Read() {
 
         e.preventDefault();
         const sendComment= await axios.post('http://localhost:3000/comments/post',data);
-        alert("affiche mon commentaire"+":"+comments);
+        // alert("affiche mon commentaire"+":"+comments);
         setComments('');
  }
 console.log("affiche mon commentaire"+":"+comments);
@@ -55,7 +60,17 @@ console.log("affiche mon commentaire"+":"+comments);
   }
   fetchData()
 },[]);
- console.log(mycomments);
+
+
+useEffect(()=>{
+    const fetchData=()=>{
+    fetch('http://localhost:3000/likes/get')
+    .then(res=>res.json())
+    .then(data=>{setMylikes(data)});
+  }
+  fetchData();
+},[]);
+
   
   return (
     <>
@@ -94,7 +109,7 @@ console.log("affiche mon commentaire"+":"+comments);
              </div>
               <div className="user-comment"><p ><strong>{element.comments}</strong></p></div>
               
-              <div className="comments-liked"><span>{likes}<i class="fa-regular fa-thumbs-up" onClick={counter}></i><i class="fa-regular fa-thumbs-down" onClick={uncounter}></i></span><span className="comments-response"  onClick={response}>repondre</span> </div>
+              <div className="comments-liked"><span>{likes}<i class="fa-regular fa-thumbs-up" onClick={counter}></i><i class="fa-regular fa-thumbs-down" onClick={uncounter}></i></span><i class="fa-sharp fa-solid fa-share"></i><span className="comments-response"  onClick={response}>repondre</span> </div>
             </div>  
         ))}
         </div>

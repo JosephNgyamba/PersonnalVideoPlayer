@@ -37,6 +37,9 @@
   height: 30px;
   border: solid 1px green;
 }
+.header-user-profil:hover{
+    cursor: pointer;
+}
 .header-seachbar-form div{
   width: 480px;
   display: flex;

@@ -69,9 +69,9 @@ export default function  Header() {
         {userPop && (<div className="pop-up">
         <h2>Modifier votre profil</h2><span className="exitIcon"><i class="fa-solid fa-circle-xmark" onClick={customize}></i></span>
         <form action="">
-          <input type="text"  placeholder="Nom" /> <br />
-          <input type="text"  placeholder="Prenom"/> <br />
-          <input type="text"  placeholder="Lien du profil"/><br />
+          <input type="text"  name="" id="" placeholder="Nom" /> <br />
+          <input type="text"  name="" id="" placeholder="Prenom"/> <br />
+          <input type="text"  name="" id="" placeholder="Lien du profil"/><br />
           <input type="text" name="" id= "" placeholder="Facebook" /> <br />
           <input type="text" name="" id= "" placeholder="Github" /><br />
           <button className="saveUser" type="submit">Enregistrer</button>

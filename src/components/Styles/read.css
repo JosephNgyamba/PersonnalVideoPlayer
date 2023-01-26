@@ -132,3 +132,13 @@ textarea::placeholder{
 .fa-share{
   margin-left: 70px;
 }
+.responseComment{
+  display: none;
+  margin-left: 0px;
+}
+.responseComment p{
+  display: block;
+  float: left;
+  margin-left: 150px;
+  padding-top: 20px;
+}

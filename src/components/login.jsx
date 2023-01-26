@@ -22,14 +22,15 @@ export default function Login(){
     return(
         <>
          <GoogleLogin
-          
+          className="button"
+          icon={false}
           clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com"
           onSuccess={onSuccess}
           onFailure={onFailure}
-           isSignedIn = { false }
+           isSignedIn = { true }
           cookiePolicy = { 'single_host_origin' } 
           buttonText={"CONNEXION"}
-          className="button"
+          style={{fontSize:40}}
          />
         </>
     )

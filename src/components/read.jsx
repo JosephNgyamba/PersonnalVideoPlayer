@@ -36,6 +36,7 @@ export default function Read() {
  
   const response=(event)=>{
     event.preventDefault();
+    document
       alert('response')
   }
    console.log('compteur'+':' +likes);
@@ -108,8 +109,10 @@ useEffect(()=>{
               <div><img className="comments-user-profil" src={profil}></img><p className="user-name">{username}</p>
              </div>
               <div className="user-comment"><p ><strong>{element.comments}</strong></p></div>
-              
-              <div className="comments-liked"><span>{likes}<i class="fa-regular fa-thumbs-up" onClick={counter}></i><i class="fa-regular fa-thumbs-down" onClick={uncounter}></i></span><i class="fa-sharp fa-solid fa-share"></i><span className="comments-response"  onClick={response}>repondre</span> </div>
+              <div className="comments-liked"><span>{likes}<i class="fa-regular fa-thumbs-up" onClick={counter}></i><i class="fa-regular fa-thumbs-down" onClick={uncounter}></i></span><i class="fa-sharp fa-solid fa-share"></i><span className="comments-response" onClick={response}>repondre</span> </div>
+              <div className="responseComment">
+              <p>reponse</p>
+              </div>
             </div>  
         ))}
         </div>

@@ -23,7 +23,8 @@ export default function Read() {
 
   const counter=async (event)=>{
     event.preventDefault();
-    setLike(likes+1);
+    setLike(likes);
+
      const sendLike= await axios.post('http://localhost:3000/likes/post',
     {likes})
   }
@@ -32,12 +33,11 @@ export default function Read() {
     setLike(likes-1)
     const sendLike= await axios.post('http://localhost:3000/likes/post',
     {likes})
+    
   }
  
   const response=(event)=>{
     event.preventDefault();
-    document
-      alert('response')
   }
    console.log('compteur'+':' +likes);
  const comment = async (e)=>{
@@ -56,14 +56,15 @@ console.log("affiche mon commentaire"+":"+comments);
 
   useEffect(()=>{
     const fetchData=()=>{
-    fetch(`http://localhost:3000/comments/get}`)
+    fetch('http://localhost:3000/comments/get')
     .then(res=>res.json())
     .then(data=>{setMycomments(data)});
   }
   fetchData()
 },[]);
 
-
+const Allcomment =mycomments.map((element,index)=>(element._id))
+console.log("see all"+':'+Allcomment);
 useEffect(()=>{
     const fetchData=()=>{
     fetch('http://localhost:3000/likes/get')
@@ -104,18 +105,18 @@ useEffect(()=>{
       </div>
       <br />
        <div>
-          {mycomments.map((element,index)=>(
+        {mycomments.filter(element=>element.videoId==id)
+        .map((element,index)=>(
             <div className="read-display-comments" key={index}>
-              
               <div><img className="comments-user-profil" src={profil}></img><p className="user-name">{username}</p>
              </div>
               <div className="user-comment"><p ><strong>{element.comments}</strong></p></div>
               <div className="comments-liked"><span>{likes}<i class="fa-regular fa-thumbs-up" onClick={counter}></i><i class="fa-regular fa-thumbs-down" onClick={uncounter}></i></span><i class="fa-sharp fa-solid fa-share"></i><span className="comments-response" onClick={response}>repondre</span> </div>
               <div className="responseComment">
-              <p>reponse</p>
               </div>
             </div>  
         ))}
+         
         </div>
     </>
   );

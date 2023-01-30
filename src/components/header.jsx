@@ -58,19 +58,19 @@ export default function  Header() {
       user.name=e.target.nom.value;
       user.mail=e.target.email.value;
       user.prenom=e.target.prenom.value;
-      user.Facebook=e.target.Facebook.value;
-      user.linkedin=e.target.linkedin.value;
-      user.ProfilLink=e.target.profilLink.value;
+      user.facebookLink=e.target.Facebook.value;
+      user.linkedinLink=e.target.linkedin.value;
+      user.profilLink=e.target.profilLink.value;
       
       alert('user saved'+':'+e.target.nom.value +':'+ e.target.email.value)
 
        const sendComment= await axios.post('http://localhost:3000/users/post',user);
-       e.target.email.value=('');
-       e.target.nom.value=('');
-       e.target.ProfilLink.value=('');
-       e.target.Facebook.value=('');
-       e.target.linkedin.value=('');
-       e.target.prenom.value=('');
+        e.target.nom.value=('');
+     e.target.email.value=('');
+      e.target.prenom.value=('');
+     e.target.Facebook.value=('');
+      e.target.linkedin.value=('');
+      e.target.profilLink.value=('');
   }
   return (
     <>

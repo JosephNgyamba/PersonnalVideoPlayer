@@ -133,7 +133,6 @@ textarea::placeholder{
   margin-left: 70px;
 }
 .responseComment{
-  display: none;
   margin-left: 0px;
 }
 .responseComment p{

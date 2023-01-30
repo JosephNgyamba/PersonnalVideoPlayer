@@ -45,6 +45,7 @@ export default function Read() {
          data.userName = username 
          data.comments = comments
          data.userProfile=profil
+         data.videoId=id
 
         e.preventDefault();
         const sendComment= await axios.post('http://localhost:3000/comments/post',data);
@@ -55,7 +56,7 @@ console.log("affiche mon commentaire"+":"+comments);
 
   useEffect(()=>{
     const fetchData=()=>{
-    fetch('http://localhost:3000/comments/get')
+    fetch(`http://localhost:3000/comments/get}`)
     .then(res=>res.json())
     .then(data=>{setMycomments(data)});
   }

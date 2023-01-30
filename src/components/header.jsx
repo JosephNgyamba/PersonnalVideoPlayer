@@ -4,12 +4,13 @@ import { gapi, loadAuth2, loadAuth2WithProps } from "gapi-script";
 import { useRef ,useState} from "react";
 import { useContext } from "react";
 import { allcontext } from "./Mycontext";
-import Popup from 'reactjs-popup';
+import axios from 'axios';
 import 'reactjs-popup/dist/index.css';
 import Logout from "./logout";
 import "./Styles/header.css"
 import "./Styles/main.css"
 import "typeface-quicksand";
+
 
 
 export default function  Header() {
@@ -50,6 +51,27 @@ export default function  Header() {
     event.preventDefault();
     setUserPop(!userPop);
   }
+
+  const saveUsers= async (e)=>{
+      e.preventDefault();
+      const user={}
+      user.name=e.target.nom.value;
+      user.mail=e.target.email.value;
+      user.prenom=e.target.prenom.value;
+      user.Facebook=e.target.Facebook.value;
+      user.linkedin=e.target.linkedin.value;
+      user.ProfilLink=e.target.profilLink.value;
+      
+      alert('user saved'+':'+e.target.nom.value +':'+ e.target.email.value)
+
+       const sendComment= await axios.post('http://localhost:3000/users/post',user);
+       e.target.email.value=('');
+       e.target.nom.value=('');
+       e.target.ProfilLink.value=('');
+       e.target.Facebook.value=('');
+       e.target.linkedin.value=('');
+       e.target.prenom.value=('');
+  }
   return (
     <>
       <div className="header">
@@ -68,12 +90,13 @@ export default function  Header() {
         </div>
         {userPop && (<div className="pop-up">
         <h2>Modifier votre profil</h2><span className="exitIcon"><i class="fa-solid fa-circle-xmark" onClick={customize}></i></span>
-        <form action="">
-          <input type="text"  name="" id="" placeholder="Nom" /> <br />
-          <input type="text"  name="" id="" placeholder="Prenom"/> <br />
-          <input type="text"  name="" id="" placeholder="Lien du profil"/><br />
-          <input type="text" name="" id= "" placeholder="Facebook" /> <br />
-          <input type="text" name="" id= "" placeholder="Github" /><br />
+        <form action="" onSubmit={saveUsers}>
+          <input type="text" name="nom"  id="" placeholder="Nom" /> <br />
+          <input type="text"  name="prenom" id="" placeholder="Prenom"/> <br />
+          <input type="text"  name="email" id="" placeholder="email"/><br />
+          <input type="text"  name="Facebook" id= "" placeholder="Facebook" /> <br />
+          <input type="text"  name="linkedin" id= "" placeholder="linkedin" /><br />
+          <input type="text"  name="profilLink" id= "" placeholder="ProfilLink" /><br />
           <button className="saveUser" type="submit">Enregistrer</button>
         </form>
       </div>)}

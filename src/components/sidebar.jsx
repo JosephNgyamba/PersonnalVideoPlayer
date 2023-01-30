@@ -18,14 +18,14 @@ export default function SideBar(){
 
   
   const [chain, setChain] = useState([]);
-
+// AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk
 
   // useEffect(()=>{
   //   const fetchData=()=>{
   //     fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&maxResults=5&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
   //   {
   //     method:'GET',
-  //      headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
+  //      headers: new Headers({ 'Authorization' : `Bearer ${token}`}) 
   //   })
   //   .then(res=>res.json())
   //   .then(data=> setChain(data.items))

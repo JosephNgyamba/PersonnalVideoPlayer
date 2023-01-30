@@ -27,10 +27,9 @@ export default function Login(){
           clientId="71694010182-a2r6neps9gbp22mojd33agf29egodqhs.apps.googleusercontent.com"
           onSuccess={onSuccess}
           onFailure={onFailure}
-           isSignedIn = { true }
+           isSignedIn = { false }
           cookiePolicy = { 'single_host_origin' } 
           buttonText={"CONNEXION"}
-          style={{fontSize:40}}
          />
         </>
     )

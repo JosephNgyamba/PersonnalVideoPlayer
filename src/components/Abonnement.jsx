@@ -8,27 +8,28 @@ import { allcontext } from "./Mycontext";
 import SideBar from "./sidebar";
 
 export default function Subscriptions(){
+
   let token = localStorage.getItem("token");
   const [chain, setChain] = useState([]);
   const {searchingTerm} = useContext(allcontext)
 
   console.log('searching term abonnement',searchingTerm)
 
-  useEffect(()=>{
-    const fetchData=()=>{
-      fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&maxResults=25&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
-    {
-      method:'GET',
-       headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
-    })
-    .then(res=>res.json())
-    .then(data=> setChain(data.items))
+  // useEffect(()=>{
+  //   const fetchData=()=>{
+  //     fetch(" https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet%2CcontentDetails&mine=true&maxResults=25&key=AIzaSyCFR0BUmDJEn_6lDXEy364ieGsVz7s3kEk",
+  //   {
+  //     method:'GET',
+  //      headers: new Headers({ 'Authorization' : `Bearer ${token}` }) 
+  //   })
+  //   .then(res=>res.json())
+  //   .then(data=> setChain(data.items))
      
-    }
+  //   }
      
-    fetchData();
+  //   fetchData();
    
-  },[]);
+  // },[]);
    console.log(chain);
     return(
         <>
